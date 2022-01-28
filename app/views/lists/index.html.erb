@@ -1,0 +1,15 @@
+<div class="list-wrap">
+<% @lists.each do |list| %>
+  <div class="list-box">
+
+    <%#画像投稿の際、refileを使わず、gem 'image_processing', '~>1.2'を使ってるので ↓は使えないのでは？
+    <%#= attachment_image_tag list, :image, :fill, 200, 200, format: 'jpeg' %>
+
+    <div class="list-comment">
+      <span class="list-body"><%= list.body %></span>
+      <span class="list-title"><%=link_to list.title, list_path(list.id) %></span>
+    </div>
+  </div>
+<% end %>
+</div>
+
